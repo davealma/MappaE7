@@ -1,0 +1,27 @@
+{
+  "name": "mappae7",
+  "version": "1.0.0",
+  "description": "Challenge Episode 7",
+  "homepage": "https://github.com/davealma/MappaE7#readme",
+  "bugs": {
+    "url": "https://github.com/davealma/MappaE7/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davealma/MappaE7.git"
+  },
+  "license": "ISC",
+  "author": "davidalmanza88@gmail.com",
+  "type": "module",
+  "main": "server.ts",
+  "scripts": {
+    "start": "node --no-warnings --env-file=.env server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

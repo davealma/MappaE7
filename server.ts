@@ -18,6 +18,8 @@ app.get('/', (req, res) => {
 
 app.get('/phase-change-diagram', (req, res) => {
     const pressure = req.query.pressure;
+    console.log('presure: ', pressure);
+
     const liquidSlope = (10 - 0.05) / (.0035 - 0.00105);
     console.log('liquidSlope: ', liquidSlope)
     const specific_volume_liquid = ((pressure - 10) / liquidSlope) + 0.0035;
@@ -25,7 +27,7 @@ app.get('/phase-change-diagram', (req, res) => {
     const vaporSlop = (0.05 - 10) / (30 - 0.0035);
     console.log('vaporSlop: ', vaporSlop)
     const specific_volume_vapor = ((pressure - 10) / vaporSlop) + 0.0035;
-
+    console.log('---------------------------')
     res.json({
         specific_volume_liquid,
         specific_volume_vapor

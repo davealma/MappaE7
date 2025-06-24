@@ -16,6 +16,22 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get('/phase-change-diagram', (req, res) => {
+    const pressure = req.query.pressure;
+    const liquidSlope = (10 - 0.05) / (.0035 - 0.00105);
+    console.log('liquidSlope: ', liquidSlope)
+    const specific_volume_liquid = ((pressure - 10) / liquidSlope) + 0.0035;
+
+    const vaporSlop = (0.05 - 10) / (30 - 0.0035);
+    console.log('vaporSlop: ', vaporSlop)
+    const specific_volume_vapor = ((pressure - 10) / vaporSlop) + 0.0035;
+
+    res.json({
+        specific_volume_liquid,
+        specific_volume_vapor
+    });
+})
+
 app.get('/status', (req, res) => {
     const idx = Math.floor(Math.random() * 5);
     console.log('idx', idx)
